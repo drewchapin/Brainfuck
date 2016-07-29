@@ -1,3 +1,6 @@
+![license](https://img.shields.io/github/license/druciferre/brainfuck.svg?maxAge=2592000)
+![GitHub release](https://img.shields.io/github/release/druciferre/brainfuck.svg)
+
 ## Brainfuck
 
 
