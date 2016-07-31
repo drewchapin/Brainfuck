@@ -1,3 +1,4 @@
+#!/usr/bin/env brainfuck
 ++++++++++        initializes cell zero to 10
 [
    >+++++++>++++++++++>+++>+<<<<-

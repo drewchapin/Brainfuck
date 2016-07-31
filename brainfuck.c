@@ -96,8 +96,8 @@ int main( int argc, char **argv )
 
 int help()
 {
-	printf( "Usage is: brainfuck [FILE]...\n" );
-	printf( "interpreter for the Brainfuck language which was originally designed by Urban Müller in 1993. Brainfuck is an esoteric programming language, i.e. a joke. It was designed to challenege and amuse programmers\n\n" );
+	printf( "Usage: brainfuck [FILE]...\n" );
+	printf( "Interpreter for the Brainfuck language which was originally designed by Urban Müller in 1993. Brainfuck is an esoteric programming language, i.e. a joke. It was designed to challenege and amuse programmers\n\n" );
 	printf( "  --h, --help\tdisplay this help and exit\n\n" );
 	printf( "Examples: \n  brainfuck hello.bf\trun hello.bf\n  brainfuck -\t\trun instructions from standard input\n" );
 	
@@ -107,7 +107,9 @@ int help()
 char *getfile( const char *path )
 {
 	FILE *f = fopen( path, "r" );
-	char *input; 
+	char *input, *line = NULL;
+	size_t len = 0;
+	ssize_t read; 
 
 	if( !f )
 	{
@@ -116,9 +118,19 @@ char *getfile( const char *path )
 	}
 	else
 	{
-		fseek( f, 0, SEEK_END ); //seek to end of program
-		size = ftell(f); //get size of program
-		rewind( f ); //seek to begining
+		
+		// read first line
+		read = getline( &line, &len, f );
+
+		// seek to end and get size of program
+		fseek( f, 0, SEEK_END );
+		size = ftell(f);
+
+		// rewind to beginning of file or first instruction (skip shebang)
+		if( read > 2 && line[0] == '#' && line[1] == '!' )
+			fseek( f, read, SEEK_SET );
+		else
+			rewind( f );
 		
 		// allocate space to store program
 		input = (char*)malloc(size);
@@ -127,7 +139,7 @@ char *getfile( const char *path )
 		//read the program into memory
 		fread( input, 1, size, f );
 		fclose( f );
-		
+
 		return input;
 	}
 }
