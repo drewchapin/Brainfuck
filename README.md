@@ -14,32 +14,31 @@ complete description of the language see the Wikipedia article at
 http://en.wikipedia.org/wiki/Brainfuck
 
 ##### COMPILING & INSTALLING THE INTERPRETOR
- Linux & GCC
-
-    $ make
+ 
+	$ make
 	$ sudo make install
 
 
 ##### BASIC COMMANDS
-    >    increment the data pointer (to the right)
-    <    decrement the data pointer (to the left)
-    +    increase (by one) the byte at the current pointer
-    -    decrease (by one) the byte at the current pointer
-    .    send the byte at the current pointer to stdout
-    ,    accept one byte of input from the standard input
-    [    if the byte at the pointer is zero, then jump to command after next ]
-    ]    if the byte at the pointer is nonzero, then jump to matching [
+	>    increment the data pointer (to the right)
+	<    decrement the data pointer (to the left)
+	+    increase (by one) the byte at the current pointer
+	-    decrease (by one) the byte at the current pointer
+	.    send the byte at the current pointer to stdout
+	,    accept one byte of input from the standard input
+	[    if the byte at the pointer is zero, then jump to command after next ]
+	]    if the byte at the pointer is nonzero, then jump to matching [
 
 ##### RUNNING A BRAINFUCK PROGRAM
 
 Save your program as **filename.bf** and run it with
 
-    $ ./brainfuck filename.bf
+	$ ./brainfuck filename.bf
 
 You can also add a shebang to your script 
 
-    #!/usr/bin/env brainfuck
-    [->+<]
+	#!/usr/bin/env brainfuck
+	[->+<]
 
 
 
