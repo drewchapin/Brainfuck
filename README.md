@@ -16,8 +16,8 @@ http://en.wikipedia.org/wiki/Brainfuck
 ##### COMPILING & INSTALLING THE INTERPRETOR
  Linux & GCC
 
-    make
-	sudo make install
+    $ make
+	$ sudo make install
 
 
 ##### BASIC COMMANDS
@@ -34,7 +34,7 @@ http://en.wikipedia.org/wiki/Brainfuck
 
 Save your program as **filename.bf** and run it with
 
-    ./brainfuck filename.bf
+    $ ./brainfuck filename.bf
 
 You can also add a shebang to your script 
 
