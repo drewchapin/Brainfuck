@@ -3,7 +3,7 @@ CC=gcc
 default: brainfuck
 
 brainfuck.o: brainfuck.c
-	$(CC) -Wall -c brainfuck.c -o brainfuck.o
+	$(CC) -Wall -o2 -c brainfuck.c -o brainfuck.o
 
 brainfuck: brainfuck.o
 	$(CC) brainfuck.o -o brainfuck

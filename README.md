@@ -13,10 +13,11 @@ i.e. a joke. It was designed to challenege and amuse programmers. For a more
 complete description of the language see the Wikipedia article at
 http://en.wikipedia.org/wiki/Brainfuck
 
-##### COMPILING THE INTERPRETOR
+##### COMPILING & INSTALLING THE INTERPRETOR
  Linux & GCC
 
-    gcc -o2 -o brainfuck brainfuck.c
+    make
+	sudo make install
 
 
 ##### BASIC COMMANDS
@@ -34,3 +35,11 @@ http://en.wikipedia.org/wiki/Brainfuck
 Save your program as **filename.bf** and run it with
 
     ./brainfuck filename.bf
+
+You can also add a shebang to your script 
+
+    #!/usr/bin/env brainfuck
+    [->+<]
+
+
+
